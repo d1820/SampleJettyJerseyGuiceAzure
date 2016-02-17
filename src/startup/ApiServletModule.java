@@ -13,13 +13,13 @@ import com.sun.jersey.guice.spi.container.servlet.GuiceContainer;
 
 import controllers.MessageController;
 
-public class ApiServerletModule extends ServletModule {
+public class ApiServletModule extends ServletModule {
 
     @Override
     protected void configureServlets() {
         bind(DefaultServlet.class).in(Singleton.class);
         bind(MessageController.class);
-        
+
         bind(MessageBodyReader.class).to(JacksonJsonProvider.class);
         bind(MessageBodyWriter.class).to(JacksonJsonProvider.class);
 
